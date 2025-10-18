@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港装修、机电安装与智能化业务牌照申请全攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#3b82f6',
+                        accent: '#93c5fd',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 顶部导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-building text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-primary hidden md:inline-block">我司在港牌照申请全攻略</span>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#装修业务（建议公司优先办理）" class="text-gray-600 hover:text-primary transition-colors">装修业务</a>
+                <a href="#机电安装" class="text-gray-600 hover:text-primary transition-colors">机电安装</a>
+                <a href="#智能化业务" class="text-gray-600 hover:text-primary transition-colors">智能化业务</a>
+                <a href="#申请策略" class="text-gray-600 hover:text-primary transition-colors">申请策略</a>
+                <a href="#结论建议" class="text-gray-600 hover:text-primary transition-colors">结论建议</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-primary">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#装修业务" class="text-gray-600 hover:text-primary py-2 transition-colors">装修业务</a>
+                <a href="#机电安装" class="text-gray-600 hover:text-primary py-2 transition-colors">机电安装</a>
+                <a href="#智能化业务" class="text-gray-600 hover:text-primary py-2 transition-colors">智能化业务</a>
+                <a href="#申请策略" class="text-gray-600 hover:text-primary py-2 transition-colors">申请策略</a>
+                <a href="#结论建议" class="text-gray-600 hover:text-primary py-2 transition-colors">结论建议</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 封面区域 -->
+        <section class="mb-16 text-center">
+            <h1 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-dark mb-6 text-shadow">香港装修、机电安装与智能化业务牌照申请全攻略</h1>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">向公司领导全面解析香港各类建筑相关业务牌照申请流程、要求与合规标准，帮助我司在港顺利开展业务</p>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="#装修业务" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg shadow-md transition-all flex items-center">
+                    <i class="fa fa-paint-brush mr-2"></i> 装修业务牌照
+                </a>
+                <a href="#机电安装" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-lg shadow-md transition-all flex items-center">
+                    <i class="fa fa-cogs mr-2"></i> 机电安装牌照
+                </a>
+                <a href="#智能化业务" class="bg-accent hover:bg-accent/90 text-dark px-6 py-3 rounded-lg shadow-md transition-all flex items-center">
+                    <i class="fa fa-microchip mr-2"></i> 智能化业务资质
+                </a>
+            </div>
+        </section>
+
+        <!-- 牌照申请时间对比图表 -->
+        <section class="mb-16 bg-white p-6 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">各类牌照申请时间对比</h2>
+            <div class="w-full h-80">
+                <canvas id="applicationTimeChart"></canvas>
+            </div>
+        </section>
+
+        <!-- 装修业务牌照申请详解 -->
+        <section id="装修业务" class="mb-16 scroll-mt-20">
+            <div class="flex items-center mb-6">
+                <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i class="fa fa-paint-brush text-primary text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-dark">一、香港装修业务牌照申请详解</h2>
+            </div>
+
+            <!-- 装修业务资质体系概述 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">1.1 香港装修业务资质体系概述</h3>
+                <p class="mb-4 text-gray-700">在香港从事装修业务，必须根据工程规模和性质申请相应的牌照或许可。香港装修业务资质主要分为<strong class="text-primary">一般建筑承建商</strong>和<strong class="text-primary">小型工程承建商</strong>两大类。</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-blue-50 p-5 rounded-lg card-hover">
+                        <h4 class="font-bold text-lg mb-2 text-primary">一般建筑承建商</h4>
+                        <p class="text-gray-700">主要负责涉及建筑物结构改动的大型装修工程，这类工程需要向屋宇署提交详细的建筑图则并获得批准。</p>
+                    </div>
+                    <div class="bg-blue-50 p-5 rounded-lg card-hover">
+                        <h4 class="font-bold text-lg mb-2 text-primary">小型工程承建商</h4>
+                        <p class="text-gray-700">适用于不涉及结构安全的小型装修工程，这类工程可通过简化程序进行申报。</p>
+                    </div>
+                </div>
+                
+                <p class="mt-6 text-gray-700">此外，所有装修工程都需遵守《建筑物条例》及其附属规例的规定，确保工程符合消防安全、结构安全及排水工程等方面的标准。</p>
+            </div>
+
+            <!-- 一般建筑承建商注册流程与要求 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">1.2 一般建筑承建商注册流程与要求</h3>
+                
+                <!-- 申请资格与条件 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-check-circle text-green-500 mr-2"></i>1.2.1 申请资格与条件
+                    </h4>
+                    <ul class="space-y-3 text-gray-700 pl-6">
+                        <li class="flex">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <div>
+                                <strong>公司架构要求</strong>：申请企业必须是在香港注册的有限公司，并具备完善的公司管理架构，需委任<strong class="text-primary">技术董事</strong>和<strong class="text-primary">获授权签署人</strong>（需具备相关专业资格，如注册建筑师、工程师）。
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <div>
+                                <strong>专业人员配备</strong>：
+                                <ul class="pl-6 mt-2 space-y-1">
+                                    <li>申请普通承建商牌照（如装修、土木工程）需至少配备1名注册建造师或工程师。</li>
+                                    <li>管理人员经验：公司董事或授权人士需提供至少3年相关领域管理经验证明，政府工程投标时通常要求10年以上行业履历。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <div>
+                                <strong>财务能力证明</strong>：
+                                <ul class="pl-6 mt-2 space-y-1">
+                                    <li>法定注册资本最低1万港元（无需实缴），但银行开户时需提供资金来源证明。</li>
+                                    <li>申请C级承建商牌照需提交最近两年审计报告及1000万港元资产证明。</li>
+                                    <li>参与政府工程投标需具备至少500万港元授信额度。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <div>
+                                <strong>工业装置资源</strong>：需证明拥有足够的工业装置资源，以支持装修工程的开展。
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <div>
+                                <strong>无犯罪记录</strong>：关键人员（技术董事、获授权签署人）需提供无犯罪记录声明。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 申请材料清单 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-file-text-o text-blue-500 mr-2"></i>1.2.2 申请材料清单
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold mb-2 text-primary">公司注册文件</h5>
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc">
+                                <li>公司注册证书（经认证的副本）</li>
+                                <li>商业登记证（经认证的副本）</li>
+                                <li>公司章程（需明确建筑业务范围）</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold mb-2 text-primary">专业人员资质证明</h5>
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc">
+                                <li>技术董事和获授权签署人的学历、专业资格证书及履历</li>
+                                <li>注册建筑师或工程师的注册证明文件</li>
+                                <li>关键人员的管理经验证明</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold mb-2 text-primary">财务证明文件</h5>
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc">
+                                <li>最近18个月的核数师报告及资产负债表</li>
+                                <li>银行资信证明（如需要）</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold mb-2 text-primary">其他文件</h5>
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc">
+                                <li>工业装置资源证明</li>
+                                <li>办公场所证明（需为实体办公场所）</li>
+                                <li>公众责任保险证明（保额建议不低于港币1,000万）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 申请流程详解 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-refresh text-purple-500 mr-2"></i>1.2.3 申请流程详解
+                    </h4>
+                    <div class="relative">
+                        <!-- 时间线连接线 -->
+                        <div class="absolute left-3 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+                        
+                        <div class="space-y-8 relative">
+                            <!-- 步骤1 -->
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center z-10">1</div>
+                                <div class="ml-6">
+                                    <h5 class="font-semibold text-primary">公司核名与文件准备</h5>
+                                    <ul class="mt-2 pl-5 space-y-1 text-gray-700 list-disc">
+                                        <li>通过香港公司注册处官网进行名称查册，确保不含敏感词汇</li>
+                                        <li>准备公司章程（需明确建筑业务范围）、董事股东身份证明及股权分配文件</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- 步骤2 -->
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center z-10">2</div>
+                                <div class="ml-6">
+                                    <h5 class="font-semibold text-primary">提交申请</h5>
+                                    <ul class="mt-2 pl-5 space-y-1 text-gray-700 list-disc">
+                                        <li>向屋宇署提交《承建商注册申请书》（表格可在屋宇署网站下载）</li>
+                                        <li>附上专业人员资格证明、保险单据及所有相关文件</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- 步骤3 -->
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center z-10">3</div>
+                                <div class="ml-6">
+                                    <h5 class="font-semibold text-primary">审核阶段</h5>
+                                    <ul class="mt-2 pl-5 space-y-1 text-gray-700 list-disc">
+                                        <li>发展局辖下承建商注册事务处审核周期通常为8-12周</li>
+                                        <li>审核内容包括公司资质、专业人员资格、财务能力等</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- 步骤4 -->
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center z-10">4</div>
+                                <div class="ml-6">
+                                    <h5 class="font-semibold text-primary">面试（如需要）</h5>
+                                    <p class="mt-2 text-gray-700">部分情况下，屋宇署可能要求公司董事或授权代表进行面试，以评估其专业能力和经验</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 步骤5 -->
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center z-10">5</div>
+                                <div class="ml-6">
+                                    <h5 class="font-semibold text-primary">获得批准</h5>
+                                    <ul class="mt-2 pl-5 space-y-1 text-gray-700 list-disc">
+                                        <li>审核通过后，获发一般建筑承建商注册证书</li>
+                                        <li>获批后需在6个月内完成商业登记证续期</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- 步骤6 -->
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center z-10">6</div>
+                                <div class="ml-6">
+                                    <h5 class="font-semibold text-primary">公布注册信息</h5>
+                                    <p class="mt-2 text-gray-700">注册信息将在屋宇署网站公布，供公众查阅</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 小型工程承建商注册流程与要求 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">1.3 小型工程承建商注册流程与要求</h3>
+                
+                <!-- 适用范围与分类 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-th-list text-blue-500 mr-2"></i>1.3.1 适用范围与分类
+                    </h4>
+                    <p class="mb-4 text-gray-700">小型工程承建商主要负责不涉及建筑物结构安全的小型装修工程。根据《建筑物(小型工程)规例》，小型工程分为<strong class="text-primary">三个级别</strong>，各级别对应的工程范围如下：</p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead>
+                                <tr class="bg-primary text-white">
+                                    <th class="py-3 px-4 text-left">级别</th>
+                                    <th class="py-3 px-4 text-left">工程类型</th>
+                                    <th class="py-3 px-4 text-left">示例工程</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-medium">第I级小型工程</td>
+                                    <td class="py-3 px-4">较复杂的小型工程</td>
+                                    <td class="py-3 px-4">在非结构墙上开洞、安装金属楼梯等</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <td class="py-3 px-4 font-medium">第II级小型工程</td>
+                                    <td class="py-3 px-4">中等复杂程度的小型工程</td>
+                                    <td class="py-3 px-4">安装晾衣架、小型招牌等</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">第III级小型工程</td>
+                                    <td class="py-3 px-4">简单的小型工程</td>
+                                    <td class="py-3 px-4">更换门窗、铺设地砖等</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 申请资格与条件 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-check-circle text-green-500 mr-2"></i>1.3.2 申请资格与条件
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h5 class="font-semibold mb-3 text-primary">个人注册条件（如需要）</h5>
+                            <ul class="pl-5 space-y-2 text-gray-700 list-disc">
+                                <li>年满18岁的香港居民</li>
+                                <li>持有有效的建造业安全训练证明书（即建造业平安卡）</li>
+                                <li>具备相关资格（即指定工种的认可注册证或技能证书）</li>
+                                <li>具备建筑业所需的相关经验（视情况而定）</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h5 class="font-semibold mb-3 text-primary">公司注册条件</h5>
+                            <ul class="pl-5 space-y-2 text-gray-700 list-disc">
+                                <li>在香港注册的公司</li>
+                                <li>委任合适的专业人员负责监督工程</li>
+                                <li>具备适当的设备和资源完成小型工程</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 申请流程详解 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-refresh text-purple-500 mr-2"></i>1.3.4 申请流程详解
+                    </h4>
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <ol class="pl-5 space-y-3 text-gray-700 list-decimal">
+                            <li class="font-medium">确定小型工程级别
+                                <p class="text-sm font-normal mt-1">根据拟从事的工程范围，确定申请第I级、第II级或第III级小型工程承建商资质</p>
+                            </li>
+                            <li class="font-medium">准备申请材料
+                                <p class="text-sm font-normal mt-1">按要求准备上述申请材料</p>
+                            </li>
+                            <li class="font-medium">提交申请
+                                <p class="text-sm font-normal mt-1">向屋宇署提交小型工程承建商注册申请，申请表格可在屋宇署网站下载或在屋宇署楼宇资讯中心索取</p>
+                            </li>
+                            <li class="font-medium">审核阶段
+                                <p class="text-sm font-normal mt-1">屋宇署对申请材料进行审核，评估申请人的资质和能力，审核时间通常较短，一般为4-6周</p>
+                            </li>
+                            <li class="font-medium">获得批准
+                                <p class="text-sm font-normal mt-1">审核通过后，获发小型工程承建商注册证书，注册信息将在屋宇署网站公布</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 装修工程的环保与安全合规要求 -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-primary">1.4 装修工程的环保与安全合规要求</h3>
+                <p class="mb-4 text-gray-700">在香港进行装修工程，除了获得相应的承建商资质外，还需遵守以下环保与安全规定：</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                    <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-leaf text-green-500 text-xl mr-3"></i>
+                            <h4 class="font-semibold text-primary">空气污染控制</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>遵守《空气污染管制条例》，特别是粉尘控制要求</li>
+                            <li>进行可能产生粉尘的作业时，需采取适当的防尘措施</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-volume-off text-orange-500 text-xl mr-3"></i>
+                            <h4 class="font-semibold text-primary">噪音控制</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>遵守《噪音管制条例》，控制施工噪音在法定限值内</li>
+                            <li>高噪音作业应安排在非敏感时段进行</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-trash text-brown-500 text-xl mr-3"></i>
+                            <h4 class="font-semibold text-primary">废物管理</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>建筑废物需按《废物处置条例》进行分类、收集和处置</li>
+                            <li>需与持牌废物收集商签订协议处理建筑废物</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-fire-extinguisher text-red-500 text-xl mr-3"></i>
+                            <h4 class="font-semibold text-primary">消防安全</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>装修工程不得影响建筑物的消防设施和逃生通道</li>
+                            <li>涉及防火结构改动的工程需符合《建筑物条例》的消防安全规定</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-building-o text-blue-500 text-xl mr-3"></i>
+                            <h4 class="font-semibold text-primary">结构安全</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>严禁未经批准擅自改动建筑物的结构</li>
+                            <li>如需进行结构改动，必须由认可人士及注册结构工程师评估并向屋宇署提交图则获批</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 机电安装业务牌照申请指南 -->
+        <section id="机电安装" class="mb-16 scroll-mt-20">
+            <div class="flex items-center mb-6">
+                <div class="bg-secondary/10 p-3 rounded-lg mr-4">
+                    <i class="fa fa-cogs text-secondary text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-dark">二、香港机电安装业务牌照申请指南</h2>
+            </div>
+
+            <!-- 机电安装业务资质体系概述 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-secondary">2.1 香港机电安装业务资质体系概述</h3>
+                <p class="mb-4 text-gray-700">在香港从事机电安装业务，需根据具体业务范围申请相应的牌照或许可。香港机电安装业务资质主要包括以下几类：</p>
+                
+                <div class="grid md:grid-cols-2 gap-4 mt-6">
+                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-secondary card-hover">
+                        <h4 class="font-semibold mb-2">电力工程承建商注册</h4>
+                        <p class="text-gray-700 text-sm">适用于从事电力装置安装、维修及测试的企业</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-secondary card-hover">
+                        <h4 class="font-semibold mb-2">升降机及自动梯承建商注册</h4>
+                        <p class="text-gray-700 text-sm">适用于从事升降机、自动梯安装及维修的企业</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-secondary card-hover">
+                        <h4 class="font-semibold mb-2">消防装置承办商注册</h4>
+                        <p class="text-gray-700 text-sm">适用于从事消防系统安装及维修的企业</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-secondary card-hover">
+                        <h4 class="font-semibold mb-2">气体装置承办商注册</h4>
+                        <p class="text-gray-700 text-sm">适用于从事气体装置安装及维修的企业</p>
+                    </div>
+                </div>
+                
+                <p class="mt-6 text-gray-700">各类资质均由香港机电工程署（EMSD）或相关部门负责管理和审批。</p>
+            </div>
+
+            <!-- 电力工程承建商注册详解 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-secondary">2.2 电力工程承建商注册详解</h3>
+                
+                <!-- 申请资格与条件 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-check-circle text-green-500 mr-2"></i>2.2.1 申请资格与条件
+                    </h4>
+                    
+                    <div class="space-y-4 text-gray-700">
+                        <div>
+                            <h5 class="font-semibold text-secondary">公司注册要求</h5>
+                            <ul class="pl-5 mt-2 space-y-1 list-disc">
+                                <li>申请人必须是在香港注册的公司或个人</li>
+                                <li>如属个人申请人，需为注册电业工程人员</li>
+                                <li>如属合伙商行的申请人，最少有一名合伙人为注册电业工程人员</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-semibold text-secondary">专业人员要求</h5>
+                            <p class="mt-2">必须雇用至少一名注册电业工程人员（A级、B级或C级），注册电业工程人员需具备适当的学历、训练及经验，具体资格如下：</p>
+                            
+                            <div class="overflow-x-auto mt-4">
+                                <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th class="py-2 px-4 text-left">级别</th>
+                                            <th class="py-2 px-4 text-left">学历要求</th>
+                                            <th class="py-2 px-4 text-left">工作经验要求</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-700">
+                                        <tr class="border-b border-gray-200">
+                                            <td class="py-2 px-4 font-medium">A级</td>
+                                            <td class="py-2 px-4">持有电机技工证书</td>
+                                            <td class="py-2 px-4">至少1年电力工作经验</td>
+                                        </tr>
+                                        <tr class="border-b border-gray-200 bg-gray-50">
+                                            <td class="py-2 px-4 font-medium">B级</td>
+                                            <td class="py-2 px-4">持有电机工程学高级证书</td>
+                                            <td class="py-2 px-4">至少2年电力工作经验</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 font-medium">C级</td>
+                                            <td class="py-2 px-4">持有电机工程学学位</td>
+                                            <td class="py-2 px-4">至少2年电力工作经验</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-semibold text-secondary">注册电业工程人员持续进修要求</h5>
+                            <ul class="pl-5 mt-2 space-y-1 list-disc">
+                                <li>自2012年1月1日起，所有注册电业工程人员在递交注册续期申请前，须完成持续进修训练</li>
+                                <li>持续进修计划详情可在机电工程署网站查询</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 申请流程详解 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-refresh text-purple-500 mr-2"></i>2.2.3 申请流程详解
+                    </h4>
+                    
+                    <div class="flex flex-col md:flex-row md:items-center justify-between bg-blue-50 p-5 rounded-lg">
+                        <div class="w-full md:w-1/4 mb-4 md:mb-0 text-center">
+                            <div class="inline-block bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                            <h5 class="mt-2 font-semibold text-secondary">确定注册类别</h5>
+                        </div>
+                        <div class="hidden md:block text-secondary text-2xl mx-4">→</div>
+                        <div class="w-full md:w-1/4 mb-4 md:mb-0 text-center">
+                            <div class="inline-block bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                            <h5 class="mt-2 font-semibold text-secondary">准备材料</h5>
+                        </div>
+                        <div class="hidden md:block text-secondary text-2xl mx-4">→</div>
+                        <div class="w-full md:w-1/4 mb-4 md:mb-0 text-center">
+                            <div class="inline-block bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                            <h5 class="mt-2 font-semibold text-secondary">递交申请</h5>
+                        </div>
+                        <div class="hidden md:block text-secondary text-2xl mx-4">→</div>
+                        <div class="w-full md:w-1/4 text-center">
+                            <div class="inline-block bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</div>
+                            <h5 class="mt-2 font-semibold text-secondary">获得批准</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h5 class="font-semibold text-secondary">递交申请方式</h5>
+                            <ul class="pl-5 mt-2 space-y-1 list-disc">
+                                <li>亲自递交至机电工程署注册及许可证办事处（地址：九龙九龙湾启成街3号机电工程署总部地下）</li>
+                                <li>邮寄至机电工程署注册及许可证办事处</li>
+                                <li>网上递交（需备有通行密码及公司数码证书）</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h5 class="font-semibold text-secondary">申请费用与审核时间</h5>
+                            <ul class="pl-5 mt-2 space-y-1 list-disc">
+                                <li>申请费用为855港元</li>
+                                <li>付款方式包括现金、划线支票、汇票、本票等（抬头为"香港特别行政区政府"）</li>
+                                <li>审核时间约为13个工作日（收齐所有文件及申请费用后）</li>
+                                <li>注册证明书有效期为3年</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 消防装置承办商注册详解 -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-secondary">2.4 消防装置承办商注册详解</h3>
+                
+                <!-- 申请资格与条件 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-check-circle text-green-500 mr-2"></i>2.4.1 申请资格与条件
+                    </h4>
+                    
+                    <p class="mb-4 text-gray-700">香港消防装置承办商分为三个级别，各级别对应的业务范围如下：</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                            <div class="bg-red-100 w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                <span class="font-bold text-red-600">1级</span>
+                            </div>
+                            <h5 class="font-semibold mb-2">第1级消防装置承办商</h5>
+                            <p class="text-gray-700 text-sm">可安装、保养、维修、检查利用电路或其他电力装置探测烟雾或火警并以声响示警的消防装置设备</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                            <div class="bg-orange-100 w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                <span class="font-bold text-orange-600">2级</span>
+                            </div>
+                            <h5 class="font-semibold mb-2">第2级消防装置承办商</h5>
+                            <p class="text-gray-700 text-sm">可安装、保养、维修、检查各类消防装置（手提器具除外）</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 rounded-lg p-4 card-hover">
+                            <div class="bg-yellow-100 w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                <span class="font-bold text-yellow-600">3级</span>
+                            </div>
+                            <h5 class="font-semibold mb-2">第3级消防装置承办商</h5>
+                            <p class="text-gray-700 text-sm">可保养、维修、检查手提消防器具</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-700">
+                        <div>
+                            <h5 class="font-semibold text-secondary">专业人员要求</h5>
+                            <ul class="pl-5 mt-2 space-y-2 list-disc">
+                                <li>第1级消防装置承办商：需有一名持有电机工程学位的合资格人士</li>
+                                <li>第2级消防装置承办商：需有一名持有第I级水喉匠牌照及电机工程文凭或高级证书的合资格人士</li>
+                                <li>第3级消防装置承办商：需通过笔试和实用技术测验</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-semibold text-secondary">工场设施要求</h5>
+                            <ul class="pl-5 mt-2 space-y-1 list-disc">
+                                <li>需设有面积不少于10平方米的独立工场</li>
+                                <li>需出示证明文件（如购买/租赁协议书）证明有权使用有关工场</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 申请流程详解 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-refresh text-purple-500 mr-2"></i>2.4.3 申请流程详解
+                    </h4>
+                    
+                    <div class="relative">
+                        <!-- 垂直时间线 -->
+                        <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-secondary/30"></div>
+                        
+                        <div class="space-y-8 pl-6">
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">确定注册级别</h5>
+                                <p class="mt-1 text-gray-700">根据拟从事的业务范围，确定申请第1级、第2级或第3级消防装置承办商资质</p>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">准备申请材料</h5>
+                                <p class="mt-1 text-gray-700">按要求准备申请材料，包括公司注册文件、合资格人士证明、工场设施证明等</p>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">递交申请</h5>
+                                <p class="mt-1 text-gray-700">将填妥的表格连同所需的证明文件送往或邮寄至以下地址：</p>
+                                <p class="mt-2 text-gray-700 italic">九龙尖沙咀东部 康庄道1号 消防处总部大厦5楼南翼 消防处牌照及审批总区总部 消防装置承办商注册处</p>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">审核与约见</h5>
+                                <p class="mt-1 text-gray-700">消防处确认申请人已备妥所有文件后，会安排约见申请人和建议的合资格人士，核实申请人的资质和能力</p>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">缴费与工场视察</h5>
+                                <p class="mt-1 text-gray-700">消防处会向申请人发出缴款通知书，申请人须依照指示缴付注册费。收妥注册费后，消防处会派员视察工场，申请人必须展示所需的全部基本装备</p>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">考试（如需要）</h5>
+                                <p class="mt-1 text-gray-700">申请第3级消防装置承办商需参加笔试和实用技术测验，笔试为计算机化考试（多项选择题）</p>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-8 w-4 h-4 rounded-full bg-secondary top-1"></div>
+                                <h5 class="font-semibold text-secondary">获得批准</h5>
+                                <p class="mt-1 text-gray-700">如证实工场符合要求，消防处会向申请人发出批准书，并将其公司或商号名称记入正式的注册记录册内。注册有效期通常为1年，需每年续期</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 智能化业务资质申请指南 -->
+        <section id="智能化业务" class="mb-16 scroll-mt-20">
+            <div class="flex items-center mb-6">
+                <div class="bg-accent/10 p-3 rounded-lg mr-4">
+                    <i class="fa fa-microchip text-accent text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-dark">三、香港智能化业务资质申请指南</h2>
+            </div>
+
+            <!-- 智能化业务资质体系概述 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-accent">3.1 香港智能化业务资质体系概述</h3>
+                <p class="mb-4 text-gray-700">在香港从事智能化业务（如智能家居、物联网系统、智能建筑等），目前<strong class="text-accent">没有强制要求的特定牌照</strong>，但需满足以下条件以提升市场竞争力和合规性：</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-gray-50 p-5 rounded-lg card-hover">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-accent/20 p-2 rounded-full mr-3">
+                                <i class="fa fa-briefcase text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold">政府电子采购系统注册（建议公司优先办理）</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>参与政府项目投标需在政府电子采购系统注册</li>
+                            <li>注册后可参与政府招标，获取政府项目机会</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-lg card-hover">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-accent/20 p-2 rounded-full mr-3">
+                                <i class="fa fa-certificate text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold">国际认证与标准</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>ISO 27001（信息安全管理体系认证）</li>
+                            <li>BEAM Plus（香港绿色建筑认证）</li>
+                            <li>openBIM®认证（建筑信息模型认证）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-lg card-hover">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-accent/20 p-2 rounded-full mr-3">
+                                <i class="fa fa-user-o text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold">技术人员资质</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>关键技术人员需具备相关专业资格（如Cisco认证、微软Azure认证等）</li>
+                            <li>建筑信息模拟（BIM）协调员需具备相关资质</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-lg card-hover">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-accent/20 p-2 rounded-full mr-3">
+                                <i class="fa fa-wifi text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold">电信牌照（如需要）</h4>
+                        </div>
+                        <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                            <li>提供物联网服务需申请非公共电信服务牌照</li>
+                            <li>提供无线物联网服务需申请无线物联网牌照</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 物联网服务牌照申请指南 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-accent">3.3 物联网服务牌照申请指南</h3>
+                
+                <!-- 牌照类型与适用范围 -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-th-list text-blue-500 mr-2"></i>3.3.1 牌照类型与适用范围
+                    </h4>
+                    
+                    <div class="space-y-4 text-gray-700">
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h5 class="font-semibold text-accent">非公共电信服务牌照</h5>
+                            <p class="mt-2 text-sm">适用于提供给特定用户或特定群体使用的电信服务，包括物联网服务。提供企业内部通信网络、物联网服务等需申请此类牌照。</p>
+                        </div>
+                        
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h5 class="font-semibold text-accent">无线物联网牌照</h5>
+                            <p class="mt-2 text-sm">适用于提供公共电讯网络服务，其范围包括无线物联网服务。可设置和维持电讯网络，管有和使用无线电通讯装置提供服务。</p>
+                        </div>
+                        
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h5 class="font-semibold text-accent">服务营办商牌照（SBO）</h5>
+                            <p class="mt-2 text-sm">适用于不自行建设大型物理网络基础设施，但利用其他持牌传送者的网络资源提供电讯服务的运营商。提供物联网设备联网服务需申请此类牌照。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 申请流程详解 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                        <i class="fa fa-refresh text-purple-500 mr-2"></i>3.3.4 申请流程详解
+                    </h4>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead>
+                                <tr class="bg-accent text-dark">
+                                    <th class="py-3 px-4 text-left">步骤</th>
+                                    <th class="py-3 px-4 text-left">流程描述</th>
+                                    <th class="py-3 px-4 text-left">关键要点</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-medium">1</td>
+                                    <td class="py-3 px-4">确定牌照类型</td>
+                                    <td class="py-3 px-4">根据拟提供的物联网服务类型选择合适的牌照</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <td class="py-3 px-4 font-medium">2</td>
+                                    <td class="py-3 px-4">准备申请材料</td>
+                                    <td class="py-3 px-4">包括公司文件、业务计划、技术方案、财务证明等</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-medium">3</td>
+                                    <td class="py-3 px-4">提交申请</td>
+                                    <td class="py-3 px-4">通过香港通讯事务管理局（OFCA）指定渠道提交</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <td class="py-3 px-4 font-medium">4</td>
+                                    <td class="py-3 px-4">缴纳申请费</td>
+                                    <td class="py-3 px-4">费用金额根据牌照类型而定</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-medium">5</td>
+                                    <td class="py-3 px-4">审核与评估</td>
+                                    <td class="py-3 px-4">审核时间通常为4至8周，评估财务状况、技术能力等</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <td class="py-3 px-4 font-medium">6</td>
+                                    <td class="py-3 px-4">获得批准</td>
+                                    <td class="py-3 px-4">通过审核后获发相应牌照，需遵守牌照特定条件</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-medium">7</td>
+                                    <td class="py-3 px-4">缴纳年费</td>
+                                    <td class="py-3 px-4">获得牌照后需按规定缴纳年费</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="py-3 px-4 font-medium">8</td>
+                                    <td class="py-3 px-4">持续合规</td>
+                                    <td class="py-3 px-4">遵守牌照条件，提交定期报告，更新公司信息</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 智能化业务的认证与标准 -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-accent">3.5 智能化业务的认证与标准</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-accent/20 p-4">
+                            <h4 class="font-semibold text-accent">ISO 27001认证</h4>
+                            <p class="text-sm text-gray-600 mt-1">信息安全管理体系</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-700 mb-3">国际公认的信息安全管理体系标准，在香港从事涉及客户数据的智能化业务建议获取此认证。</p>
+                            <h5 class="font-medium text-sm text-accent mb-2">认证流程：</h5>
+                            <ol class="pl-5 space-y-1 text-gray-700 list-decimal text-sm">
+                                <li>建立信息安全管理体系</li>
+                                <li>进行内部审核和管理评审</li>
+                                <li>选择认证机构进行认证审核</li>
+                                <li>通过审核后获得认证证书</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-green-100 p-4">
+                            <h4 class="font-semibold text-green-700">BEAM Plus认证</h4>
+                            <p class="text-sm text-gray-600 mt-1">香港绿色建筑认证</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-700 mb-3">香港的绿色建筑评估系统，为所有类型和楼龄的建筑作出独立的可持续绩效评审和认证。</p>
+                            <h5 class="font-medium text-sm text-green-700 mb-2">智能化相关标准：</h5>
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm">
+                                <li>智能控制系统（照明、空调等）</li>
+                                <li>可再生能源系统</li>
+                                <li>智能计量和监控系统</li>
+                                <li>室内环境质量监测系统</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-purple-100 p-4">
+                            <h4 class="font-semibold text-purple-700">其他相关认证</h4>
+                            <p class="text-sm text-gray-600 mt-1">提升竞争力的认证</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-3">
+                                <div>
+                                    <h5 class="font-medium text-sm text-purple-700">openBIM®认证</h5>
+                                    <p class="text-sm text-gray-700">通过buildingSMART香港分会认证，证明企业具备BIM技术应用能力</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-sm text-purple-700">智能家居产品认证</h5>
+                                    <p class="text-sm text-gray-700">符合香港机电工程署的《能源效益标签计划》及相关安全标准</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-sm text-purple-700">能效认证</h5>
+                                    <p class="text-sm text-gray-700">符合香港机电工程署的能效要求，获得能源效益标签</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 牌照申请策略与实用建议 -->
+        <section id="申请策略" class="mb-16 scroll-mt-20">
+            <div class="flex items-center mb-6">
+                <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i class="fa fa-lightbulb-o text-primary text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-dark">四、牌照申请策略与实用建议</h2>
+            </div>
+
+            <!-- 多业务牌照申请策略 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">4.1 多业务牌照申请策略</h3>
+                <p class="mb-4 text-gray-700">如果我司计划同时从事装修、机电安装和智能化业务，可考虑以下策略：</p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mt-6">
+                    <div class="bg-blue-50 p-5 rounded-lg card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa fa-step-forward text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-3 text-primary">分阶段申请策略</h4>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>首先申请装修业务牌照</li>
+                            <li>待业务稳定后，再逐步申请其他业务牌照</li>
+                            <li>降低初期资金和资源压力，逐步扩大业务范围</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-5 rounded-lg card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa fa-puzzle-piece text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-3 text-primary">整合申请策略</h4>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>条件允许时，可同时申请多项牌照</li>
+                            <li>整合准备共用材料（如公司注册文件、财务证明等）</li>
+                            <li>合理安排申请时间，提高整体效率</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-5 rounded-lg card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa fa-compass text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-3 text-primary">顺应市场策略</h4>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>优先申请装修、智能化所需牌照</li>
+                            <li>同步办理各项ISO体系认证</li>
+                            <li>最后考虑BIM牌照以及消防承办商牌照</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 牌照申请的时间与成本规划 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">4.2 牌照申请的时间与成本规划</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 时间规划 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <i class="fa fa-clock-o text-blue-500 mr-2"></i>4.2.1 时间规划
+                        </h4>
+                        
+                        <div class="space-y-4 text-gray-700">
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <h5 class="font-semibold text-primary">装修业务牌照</h5>
+                                <ul class="pl-5 mt-2 space-y-1 list-disc text-sm">
+                                    <li>一般建筑承建商：8-12周</li>
+                                    <li>小型工程承建商：4-6周</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <h5 class="font-semibold text-primary">机电安装业务牌照</h5>
+                                <ul class="pl-5 mt-2 space-y-1 list-disc text-sm">
+                                    <li>电力工程承建商：约13个工作日</li>
+                                    <li>升降机及自动梯承建商：约8-12周</li>
+                                    <li>消防装置承办商：约4-6周（不含考试）</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <h5 class="font-semibold text-primary">智能化业务资质</h5>
+                                <ul class="pl-5 mt-2 space-y-1 list-disc text-sm">
+                                    <li>政府电子采购系统注册：4-6周</li>
+                                    <li>物联网服务牌照：4-8周</li>
+                                    <li>BIM协调员资质：约4周</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-4 text-sm text-gray-600 italic">我司应提前规划申请时间，留出足够的缓冲期，避免因申请延误影响业务开展。</p>
+                    </div>
+                    
+                    <!-- 成本规划 -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <i class="fa fa-money text-green-500 mr-2"></i>4.2.2 成本规划
+                        </h4>
+                        
+                        <div class="space-y-4 text-gray-700">
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <h5 class="font-semibold text-primary">申请费用</h5>
+                                <ul class="pl-5 mt-2 space-y-1 list-disc text-sm">
+                                    <li>一般建筑承建商：约2,000港元</li>
+                                    <li>小型工程承建商：约1,000港元</li>
+                                    <li>电力工程承建商：855港元</li>
+                                    <li>升降机及自动梯承建商：2,980-3,300港元</li>
+                                    <li>消防装置承办商：约1,000港元（第1级和第2级）</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <h5 class="font-semibold text-primary">保险费用</h5>
+                                <ul class="pl-5 mt-2 space-y-1 list-disc text-sm">
+                                    <li>公众责任保险：约5,000-20,000港元/年</li>
+                                    <li>专业责任保险：约10,000-50,000港元/年</li>
+                                    <li>雇员补偿保险：根据员工数量而定</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <h5 class="font-semibold text-primary">其他费用</h5>
+                                <ul class="pl-5 mt-2 space-y-1 list-disc text-sm">
+                                    <li>专业咨询费用：约10,000-50,000港元</li>
+                                    <li>办公场所租赁：约10,000-50,000港元/月</li>
+                                    <li>设备和工具购置：约50,000-500,000港元</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-4 text-sm text-gray-600 italic">我司应制定详细的预算计划，考虑初期投入和长期运营成本，确保资金充足。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 牌照申请费用对比图表 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">各类牌照申请费用对比</h3>
+                <div class="w-full h-80">
+                    <canvas id="applicationFeeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 专业服务机构选择指南 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-primary">4.3 专业服务机构选择指南</h3>
+                <p class="mb-4 text-gray-700">选择合适的专业服务机构可大大提高牌照申请成功率和效率。以下是选择指南：</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mt-6">
+                    <div class="bg-gray-50 p-4 rounded-lg text-center card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fa fa-certificate text-primary"></i>
+                        </div>
+                        <h4 class="font-semibold text-sm mb-2">资质与经验</h4>
+                        <p class="text-xs text-gray-600">选择具备相关牌照申请经验的机构，查看成功案例和客户评价</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg text-center card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fa fa-list text-primary"></i>
+                        </div>
+                        <h4 class="font-semibold text-sm mb-2">服务范围</h4>
+                        <p class="text-xs text-gray-600">选择能提供一站式服务的机构，确保服务范围涵盖所需牌照类型</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg text-center card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fa fa-users text-primary"></i>
+                        </div>
+                        <h4 class="font-semibold text-sm mb-2">专业团队</h4>
+                        <p class="text-xs text-gray-600">确认机构拥有专业的法律、工程和财务团队，具备相关行业经验</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg text-center card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fa fa-refresh text-primary"></i>
+                        </div>
+                        <h4 class="font-semibold text-sm mb-2">服务流程</h4>
+                        <p class="text-xs text-gray-600">了解服务流程和时间表，确认提供透明的进度报告和沟通机制</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg text-center card-hover">
+                        <div class="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fa fa-credit-card text-primary"></i>
+                        </div>
+                        <h4 class="font-semibold text-sm mb-2">收费模式</h4>
+                        <p class="text-xs text-gray-600">了解收费结构和标准，确保费用合理且透明，无隐藏费用</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 牌照维护与更新要点 -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-primary">4.4 牌照维护与更新要点</h3>
+                <p class="mb-4 text-gray-700">获得牌照后，还需注意以下维护与更新要点：</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead>
+                            <tr class="bg-primary text-white">
+                                <th class="py-3 px-4 text-left">维护方面</th>
+                                <th class="py-3 px-4 text-left">关键要点</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-medium">续期时间规划</td>
+                                <td class="py-3 px-4">
+                                    <ul class="pl-5 space-y-1 list-disc text-sm">
+                                        <li>所有牌照需在到期前3-4个月申请续期</li>
+                                        <li>设置提醒系统，避免逾期申请</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 bg-gray-50">
+                                <td class="py-3 px-4 font-medium">续期材料准备</td>
+                                <td class="py-3 px-4">
+                                    <ul class="pl-5 space-y-1 list-disc text-sm">
+                                        <li>准备最新的公司注册文件和商业登记证</li>
+                                        <li>更新专业人员资质证明和雇佣关系证明</li>
+                                        <li>提供最新的财务证明和保险证明</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-medium">持续合规要求</td>
+                                <td class="py-3 px-4">
+                                    <ul class="pl-5 space-y-1 list-disc text-sm">
+                                        <li>遵守牌照条件和相关法规</li>
+                                        <li>保持最新的公司信息和业务范围</li>
+                                        <li>及时报告重大变更（如公司地址、董事等）</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 bg-gray-50">
+                                <td class="py-3 px-4 font-medium">专业人员管理</td>
+                                <td class="py-3 px-4">
+                                    <ul class="pl-5 space-y-1 list-disc text-sm">
+                                        <li>确保关键岗位的专业人员保持有效资质</li>
+                                        <li>安排专业人员参加必要的培训和进修</li>
+                                        <li>及时更新专业人员信息和雇佣关系</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">记录管理</td>
+                                <td class="py-3 px-4">
+                                    <ul class="pl-5 space-y-1 list-disc text-sm">
+                                        <li>保存完整的业务记录和合规文件</li>
+                                        <li>建立完善的文档管理系统</li>
+                                        <li>保留所有牌照申请和更新的相关文件</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 结论与行动建议 -->
+        <section id="结论建议" class="mb-16 scroll-mt-20">
+            <div class="flex items-center mb-6">
+                <div class="bg-secondary/10 p-3 rounded-lg mr-4">
+                    <i class="fa fa-flag-checkered text-secondary text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-dark">五、结论与行动建议</h2>
+            </div>
+
+            <!-- 牌照申请关键成功因素 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-secondary">5.1 牌照申请关键成功因素</h3>
+                <p class="mb-4 text-gray-700">成功申请香港装修、机电安装与智能化业务牌照的关键因素包括：</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-secondary/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-check-square-o text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary">全面的准备工作</h4>
+                        </div>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>充分了解各类牌照的申请要求和流程</li>
+                            <li>提前规划并准备齐全的申请材料</li>
+                            <li>确保公司和相关人员满足所有资质要求</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-secondary/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-users text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary">专业的团队支持</h4>
+                        </div>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>组建或聘请具备相关专业知识和经验的团队</li>
+                            <li>必要时寻求专业咨询机构的协助</li>
+                            <li>确保团队成员具备良好的沟通和文件准备能力</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-secondary/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-balance-scale text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary">合规经营理念</h4>
+                        </div>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>建立健全的合规管理体系</li>
+                            <li>从业务初期就注重合规经营</li>
+                            <li>定期进行合规检查和风险评估</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-secondary/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fa fa-book text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary">持续学习与更新</h4>
+                        </div>
+                        <ul class="pl-5 space-y-2 text-gray-700 list-disc text-sm">
+                            <li>关注行业政策和法规变化</li>
+                            <li>及时更新公司资质和业务能力</li>
+                            <li>参与行业协会和专业组织，获取最新信息</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分阶段行动计划 -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-secondary">5.2 分阶段行动计划</h3>
+                <p class="mb-4 text-gray-700">基于本文的全面分析，建议采取以下分阶段行动计划：</p>
+                
+                <div class="relative">
+                    <!-- 水平时间线 -->
+                    <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-secondary/30 -translate-y-1/2"></div>
+                    
+                    <div class="space-y-12 relative">
+                        <!-- 第一阶段 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0">1</div>
+                                <h4 class="mt-3 text-center md:text-left font-semibold text-secondary">第一阶段：基础准备</h4>
+                                <p class="text-center md:text-left text-sm text-gray-500">1-2个月</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ol class="pl-5 space-y-2 text-gray-700 list-decimal text-sm">
+                                        <li>确定业务范围和目标市场</li>
+                                        <li>完成香港公司注册和商业登记（已完成）</li>
+                                        <li>开设公司银行账户</li>
+                                        <li>建立基本的公司架构和管理制度</li>
+                                        <li>研究各类牌照的具体要求和申请流程</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第二阶段 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0">2</div>
+                                <h4 class="mt-3 text-center md:text-left font-semibold text-secondary">第二阶段：核心牌照申请</h4>
+                                <p class="text-center md:text-left text-sm text-gray-500">3-6个月</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ol class="pl-5 space-y-2 text-gray-700 list-decimal text-sm">
+                                        <li>根据主要业务范围，选择并申请相应的核心牌照</li>
+                                        <li>准备并提交申请材料</li>
+                                        <li>跟进申请进度，及时回应审核意见</li>
+                                        <li>安排必要的面试和现场审核</li>
+                                        <li>获得核心牌照后，开始筹备业务运营</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第三阶段 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0">3</div>
+                                <h4 class="mt-3 text-center md:text-left font-semibold text-secondary">第三阶段：扩展牌照申请</h4>
+                                <p class="text-center md:text-left text-sm text-gray-500">6-12个月</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ol class="pl-5 space-y-2 text-gray-700 list-decimal text-sm">
+                                        <li>根据业务发展需要，申请其他相关牌照</li>
+                                        <li>建立专业团队，提升业务能力</li>
+                                        <li>申请政府电子采购系统注册，拓展政府项目机会</li>
+                                        <li>考虑申请相关认证（如ISO 27001、BEAM Plus等）</li>
+                                        <li>参与行业协会和专业组织，拓展人脉和业务机会</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第四阶段 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0">4</div>
+                                <h4 class="mt-3 text-center md:text-left font-semibold text-secondary">第四阶段：持续发展与合规</h4>
+                                <p class="text-center md:text-left text-sm text-gray-500">12个月以上</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <ol class="pl-5 space-y-2 text-gray-700 list-decimal text-sm">
+                                        <li>建立完善的合规管理体系</li>
+                                        <li>定期更新牌照和认证</li>
+                                        <li>持续提升团队专业能力</li>
+                                        <li>关注行业动态和政策变化</li>
+                                        <li>拓展业务范围，实现多元化发展</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 未来发展趋势与应对策略 -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-secondary">5.3 未来发展趋势与应对策略</h3>
+                <p class="mb-4 text-gray-700">香港装修、机电安装与智能化业务面临以下发展趋势：</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-purple-100 p-4">
+                            <h4 class="font-semibold text-purple-700">数字化转型加速</h4>
+                        </div>
+                        <div class="p-4">
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm mb-3">
+                                <li>BIM技术成为公营项目强制性要求</li>
+                                <li>智能化、物联网技术应用日益广泛</li>
+                            </ul>
+                            <h5 class="font-medium text-sm text-purple-700 mb-1">应对策略：</h5>
+                            <p class="text-sm text-gray-700">提前布局数字化技术，培养相关人才，获取必要的认证和资质</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-green-100 p-4">
+                            <h4 class="font-semibold text-green-700">绿色建筑需求增长</h4>
+                        </div>
+                        <div class="p-4">
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm mb-3">
+                                <li>BEAM Plus认证重要性提升</li>
+                                <li>节能和可持续发展成为主流趋势</li>
+                            </ul>
+                            <h5 class="font-medium text-sm text-green-700 mb-1">应对策略：</h5>
+                            <p class="text-sm text-gray-700">发展绿色建筑相关业务，获取相关认证，提升市场竞争力</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-blue-100 p-4">
+                            <h4 class="font-semibold text-blue-700">合规要求提高</h4>
+                        </div>
+                        <div class="p-4">
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm mb-3">
+                                <li>政府监管日益严格，合规成本增加</li>
+                                <li>数据安全和隐私保护要求提高</li>
+                            </ul>
+                            <h5 class="font-medium text-sm text-blue-700 mb-1">应对策略：</h5>
+                            <p class="text-sm text-gray-700">建立健全的合规管理体系，聘请专业合规顾问，定期进行合规审计</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-orange-100 p-4">
+                            <h4 class="font-semibold text-orange-700">行业整合加速</h4>
+                        </div>
+                        <div class="p-4">
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm mb-3">
+                                <li>小型企业面临更大竞争压力</li>
+                                <li>行业集中度可能提高，大型企业优势增强</li>
+                            </ul>
+                            <h5 class="font-medium text-sm text-orange-700 mb-1">应对策略：</h5>
+                            <p class="text-sm text-gray-700">寻求战略合作或并购机会，增强企业实力和资源整合能力</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover">
+                        <div class="bg-red-100 p-4">
+                            <h4 class="font-semibold text-red-700">人才竞争加剧</h4>
+                        </div>
+                        <div class="p-4">
+                            <ul class="pl-5 space-y-1 text-gray-700 list-disc text-sm mb-3">
+                                <li>高素质技术人才和管理人才需求增加</li>
+                                <li>跨境人才流动加速，香港人才引进政策放宽</li>
+                            </ul>
+                            <h5 class="font-medium text-sm text-red-700 mb-1">应对策略：</h5>
+                            <p class="text-sm text-gray-700">建立有竞争力的薪酬和发展体系，加强人才培养和引进，提升企业吸引力</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg overflow-hidden card-hover flex items-center justify-center p-4 bg-gray-50">
+                        <div class="text-center">
+                            <i class="fa fa-lightbulb-o text-4xl text-yellow-500 mb-3"></i>
+                            <h4 class="font-semibold text-gray-700 mb-2">最终建议</h4>
+                            <p class="text-sm text-gray-600">强烈建议在申请各类牌照前咨询专业的法律顾问和行业顾问，确保申请过程合规、高效，最大限度提高成功率。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-building text-accent text-2xl"></i>
+                        <span class="text-xl font-bold">香港牌照申请全攻略</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">向公司领导全面解析香港各类建筑相关业务牌照申请流程、要求与合规标准，帮助我司在港顺利开展业务</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速导航</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#装修业务" class="hover:text-accent transition-colors">装修业务牌照</a></li>
+                        <li><a href="#机电安装" class="hover:text-accent transition-colors">机电安装牌照</a></li>
+                        <li><a href="#智能化业务" class="hover:text-accent transition-colors">智能化业务资质</a></li>
+                        <li><a href="#申请策略" class="hover:text-accent transition-colors">申请策略与建议</a></li>
+                        <li><a href="#结论建议" class="hover:text-accent transition-colors">结论与行动建议</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">参考信息来源</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://www.bd.gov.hk/" target="_blank" class="hover:text-accent transition-colors flex items-center">
+                            <i class="fa fa-external-link mr-2 text-xs"></i>屋宇署
+                        </a></li>
+                        <li><a href="https://www.emsd.gov.hk/" target="_blank" class="hover:text-accent transition-colors flex items-center">
+                            <i class="fa fa-external-link mr-2 text-xs"></i>机电工程署
+                        </a></li>
+                        <li><a href="https://www.fire-services.gov.hk/" target="_blank" class="hover:text-accent transition-colors flex items-center">
+                            <i class="fa fa-external-link mr-2 text-xs"></i>消防处
+                        </a></li>
+                        <li><a href="https://www.ofca.gov.hk/" target="_blank" class="hover:text-accent transition-colors flex items-center">
+                            <i class="fa fa-external-link mr-2 text-xs"></i>通讯事务管理局
+                        </a></li>
+                        <li><a href="https://www.eprocurement.gov.hk/" target="_blank" class="hover:text-accent transition-colors flex items-center">
+                            <i class="fa fa-external-link mr-2 text-xs"></i>政府电子采购系统
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2025 香港牌照申请指南 | 本指南仅供参考，具体申请要求请以政府部门最新规定为准</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单（如果打开）
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 考虑导航栏高度
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 牌照申请时间对比图表
+        const timeCtx = document.getElementById('applicationTimeChart').getContext('2d');
+        const timeChart = new Chart(timeCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '一般建筑承建商', 
+                    '小型工程承建商', 
+                    '电力工程承建商', 
+                    '升降机及自动梯承建商', 
+                    '消防装置承办商',
+                    '政府电子采购注册',
+                    '物联网服务牌照'
+                ],
+                datasets: [{
+                    label: '申请时间（周）',
+                    data: [10, 5, 2, 10, 5, 5, 6],
+                    backgroundColor: [
+                        'rgba(30, 64, 175, 0.7)',
+                        'rgba(30, 64, 175, 0.5)',
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(59, 130, 246, 0.5)',
+                        'rgba(59, 130, 246, 0.3)',
+                        'rgba(147, 197, 253, 0.7)',
+                        'rgba(147, 197, 253, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(30, 64, 175, 1)',
+                        'rgba(30, 64, 175, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(147, 197, 253, 1)',
+                        'rgba(147, 197, 253, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '时间（周）'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = context.raw;
+                                let label = context.dataset.label || '';
+                                
+                                if (label) {
+                                    label += ': ';
+                                }
+                                
+                                // 特殊处理电力工程承建商（13个工作日约等于2周）
+                                if (context.label === '电力工程承建商') {
+                                    return '申请时间：约13个工作日（约2周）';
+                                }
+                                
+                                return `${label}${value} 周`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // 牌照申请费用对比图表
+        const feeCtx = document.getElementById('applicationFeeChart').getContext('2d');
+        const feeChart = new Chart(feeCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '一般建筑承建商', 
+                    '小型工程承建商', 
+                    '电力工程承建商', 
+                    '升降机及自动梯承建商(单一)', 
+                    '升降机及自动梯承建商(两者)',
+                    '消防装置承办商'
+                ],
+                datasets: [{
+                    label: '申请费用（港元）',
+                    data: [2000, 1000, 855, 2980, 3300, 1000],
+                    backgroundColor: [
+                        'rgba(30, 64, 175, 0.7)',
+                        'rgba(30, 64, 175, 0.5)',
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(59, 130, 246, 0.5)',
+                        'rgba(59, 130, 246, 0.3)',
+                        'rgba(147, 197, 253, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(30, 64, 175, 1)',
+                        'rgba(30, 64, 175, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(147, 197, 253, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '费用（港元）'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = context.raw;
+                                let label = context.dataset.label || '';
+                                
+                                if (label) {
+                                    label += ': ';
+                                }
+                                
+                                return `${label}HK$${value.toLocaleString()}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // 添加卡片悬停动画
+        const cards = document.querySelectorAll('.card-hover');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
